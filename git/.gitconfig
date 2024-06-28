@@ -1,0 +1,35 @@
+[user]
+  name = Cullum Smith
+  email = cullum@sacredheartsc.com
+
+[core]
+  pager = less -FX
+  askPass =
+
+[color]
+  ui = auto
+
+[diff]
+  mnemonicPrefix = true
+  colorMoved = zebra
+
+[grep]
+  extendedRegexp = true
+
+[merge]
+  conflictStyle = diff3
+
+[fetch]
+  prune = true
+
+[pull]
+  ff = only
+
+[status]
+  showUntrackedFiles = all
+
+[tag]
+  sort = version:refname
+
+[http]
+  emptyAuth = true

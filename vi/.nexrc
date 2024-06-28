@@ -1,0 +1,16 @@
+set autoindent
+set cedit=\	
+set expandtab
+set extended
+set filec=\	
+set iclower
+set leftright
+set report=1
+set ruler
+set searchincr
+set shiftwidth=2
+set showmatch
+set showmode
+set tabstop=2
+set tildeop
+set verbose
