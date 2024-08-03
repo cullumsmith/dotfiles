@@ -1,0 +1,66 @@
+#ifndef FONT
+#define FONT -xos4-terminus-medium-r-normal-*-12-*-*-*-*-*-iso10646-*
+#endif
+
+#ifndef XFT_FONT
+#define XFT_FONT Terminus:pixelsize=12:encoding=iso10646
+#endif
+
+#ifndef DPI
+#define DPI 96
+#endif
+
+Xft.dpi: DPI
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+*font: FONT
+i3wm.xft_font: XFT_FONT
+
+! zenburn
+XTerm*background: #3a3a3a
+XTerm*foreground: #dcdccc
+XTerm*cursorColor: #ffffff
+XTerm*colorUL: #366060
+XTerm*underlineColor: #dfaf8f
+XTerm*color0: #1e2320
+XTerm*color1: #d78787
+XTerm*color2: #60b48a
+XTerm*color3: #dfaf8f
+XTerm*color4: #506070
+XTerm*color5: #dc8cc3
+XTerm*color6: #8cd0d3
+XTerm*color7: #dcdccc
+XTerm*color8: #709080
+XTerm*color9: #dca3a3
+XTerm*color10: #c3bf9f
+XTerm*color11: #f0dfaf
+XTerm*color12: #94bff3
+XTerm*color13: #ec93d3
+XTerm*color14: #93e0e3
+XTerm*color15: #ffffff
+XTerm*borderWidth: 0
+XTerm*internalBorder: 2
+XTerm*termName: xterm-256color
+XTerm*utf8: true
+XTerm*vt100.utf8: true
+XTerm*vt100.locale: false
+XTerm*vt100.metaSendsEscape: true
+XTerm*vt100.saveLines: 10240
+XTerm*vt100.scrollBar: false
+XTerm*vt100.bellIsUrgent: true
+XTerm*vt100.translations: #override \
+  Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
+  Ctrl Shift <Key>C: copy-selection(CLIPBOARD)
+XTerm*allowBoldFonts: false
+XTerm*scrollKey: true
+XTerm*scrollTtyOutput: false
+XTerm*fullscreen: never
+XTerm*cutToBeginningOfLine: false
+XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+XTerm*on2Clicks: word
+XTerm*on3Clicks: line
