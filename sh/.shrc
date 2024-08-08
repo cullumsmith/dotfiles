@@ -1,5 +1,5 @@
 reset=$'\e[0m'
-blue=$'\e[1;94m'
+blue=$'\e[0;34m'
 green=$'\e[0;32m'
 PS1="\[${green}\]\u@\h\[${reset}\]:\[${blue}\]\W\[${green}\]\$\[${reset}\] "
 unset reset blue green
@@ -9,6 +9,7 @@ export PAGER=less
 export LESS='-iMRS -x2'
 export EDITOR=vim
 export LSCOLORS=DxfxgxgxcxxbxbaCacADAd
+#export LSCOLORS=ExfxgxgxcxxbxbaCacADAd
 
 alias ls='ls -FHh'
 alias ll='ls -l'
