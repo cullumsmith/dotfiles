@@ -1,4 +1,7 @@
 #!/bin/sh
 
 . "${HOME}/.profile"
-. "${HOME}/.xinitrc"
+
+if [ -z "$XDG_CURRENT_DESKTOP" ]; then
+  . "${HOME}/.xinitrc"
+fi

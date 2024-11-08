@@ -9,7 +9,6 @@ export PAGER=less
 export LESS='-iMRS -x2'
 export EDITOR=vim
 export LSCOLORS=DxfxgxgxcxxbxbaCacADAd
-#export LSCOLORS=ExfxgxgxcxxbxbaCacADAd
 
 alias ls='ls -FHh'
 alias ll='ls -l'

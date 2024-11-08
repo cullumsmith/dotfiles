@@ -7,7 +7,8 @@ xidle_timeout=900
 
 case $(hostname -s) in
   rlaptop1)
-    font_size=16
+    font_size=20
+    dpi=120
     ;;
 esac
 
@@ -21,4 +22,7 @@ setxkbmap -option ctrl:nocaps
 xidle -program "$(which i3lock) -e -c ${bg_color}" -timeout "$xidle_timeout" &
 sudo -n networkmgr &
 
-exec i3
+i3
+
+# Chrome seems to hang around after exit and use 100% CPU
+killall chrome
