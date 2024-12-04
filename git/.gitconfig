@@ -33,3 +33,6 @@
 
 [http]
   emptyAuth = true
+
+[submodule]
+  recurse = true

@@ -23,7 +23,3 @@ bind ^[[A ed-search-prev-history
 bind ^[[B ed-search-next-history
 bind "\\e[1;5C" em-next-word
 bind "\\e[1;5D" ed-prev-word
-
-if [ "$(tty)" = /dev/ttyv0 ]; then
-  startx
-fi
