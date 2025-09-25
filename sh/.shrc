@@ -6,7 +6,7 @@ unset reset blue green
 
 export CLICOLOR=1
 export PAGER=less
-export LESS='-iMRS -x2'
+export LESS='-iMRSF -x2'
 export EDITOR=vim
 export LSCOLORS=DxfxgxgxcxxbxbaCacADAd
 
