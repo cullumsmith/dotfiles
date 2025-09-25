@@ -10,6 +10,8 @@ export LESS='-iMRSF -x2'
 export EDITOR=vim
 export LSCOLORS=DxfxgxgxcxxbxbaCacADAd
 
+HISTSIZE=5000
+
 alias ls='ls -FHh'
 alias ll='ls -l'
 alias la='ls -la'
@@ -18,6 +20,7 @@ alias ...='cd ../..'
 alias mkdir='mkdir -p'
 alias df='df -h'
 alias du='du -ch'
+alias history='fc -l'
 
 bind ^[[A ed-search-prev-history
 bind ^[[B ed-search-next-history
