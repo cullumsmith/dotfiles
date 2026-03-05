@@ -1,4 +1,5 @@
 ;; Support for Git files (.gitconfig, .gitignore, .gitattributes...)
+;;test
 (use-package git-modes
   :commands (gitattributes-mode
              gitconfig-mode
