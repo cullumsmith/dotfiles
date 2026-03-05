@@ -22,6 +22,7 @@
 
 ;; Highlight uncommitted changes
 (use-package diff-hl
+  :after magit
   :commands (diff-hl-mode
              global-diff-hl-mode)
   :init
@@ -29,9 +30,14 @@
   (setq diff-hl-show-staged-changes nil)  ; Realtime feedback
   (setq diff-hl-update-async t)  ; Do not block Emacs
   (setq diff-hl-global-modes '(not pdf-view-mode image-mode))
-  (global-diff-hl-mode))
+  (global-diff-hl-mode 1)
+  :hook
+  ((magit-pre-refresh . diff-hl-magit-pre-refresh)
+   (magit-post-refresh . diff-hl-magit-post-refresh)
+   (vc-checkin . diff-hl-update)))
 
 ;; The best git interface ever created.
 (use-package magit
   :ensure t
+  :demand
   :bind (("C-x g" . magit-status)))
