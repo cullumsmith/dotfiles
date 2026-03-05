@@ -152,7 +152,7 @@
 
 ;; Git integration
 (use-package treemacs-magit
-  :after (treemacs)
+  :after (treemacs magit)
   :ensure t)
 
 ;; Per-tab treemacs
