@@ -1,5 +1,4 @@
 ;; Emacs is not actually a package. But we put all the "generic" configs in here.
-;; test
 (use-package emacs
   :init
   (setq user-full-name "Cullum Smith"
