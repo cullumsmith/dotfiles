@@ -1,6 +1,11 @@
-reset=$'\e[0m'
-blue=$'\e[0;34m'
-green=$'\e[0;32m'
+case $(uname) in
+  Linux) exec bash ;;
+esac
+
+reset=$(printf '\033[0m')
+blue=$(printf '\033[34m')
+green=$(printf '\033[32m')
+
 PS1="\[${green}\]\u@\h\[${reset}\]:\[${blue}\]\W\[${green}\]\$\[${reset}\] "
 unset reset blue green
 
@@ -26,7 +31,3 @@ bind ^[[A ed-search-prev-history
 bind ^[[B ed-search-next-history
 bind "\\e[1;5C" em-next-word
 bind "\\e[1;5D" ed-prev-word
-
-if [ "$(tty)" = /dev/ttyv0 ]; then
-  startx
-fi

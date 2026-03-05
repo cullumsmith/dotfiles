@@ -1,0 +1,3 @@
+[submodule "minimal-emacs.d/.emacs.d"]
+	path = minimal-emacs.d/.emacs.d
+	url = https://github.com/jamescherti/minimal-emacs.d

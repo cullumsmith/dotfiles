@@ -1,4 +1,4 @@
-HOME_PACKAGES = readline sh vi vim
+HOME_PACKAGES = readline sh vi vim minimal-emacs.d emacs
 XDG_PACKAGES  = tmux git
 STOW_ARGS  = --verbose --no-folding
 
