@@ -2,6 +2,7 @@
 
 (setq my-config-files
       '("compilation"
+        "local"
         "emacs"
         "theme"
         "files"
@@ -18,5 +19,9 @@
         "git"
         "vterm"
         "auto-update"))
-(dolist (file my-config-files)
-  (load-file (expand-file-name (concat file ".el") minimal-emacs-user-directory)))
+(dolist (name my-config-files)
+  (let  ((file (expand-file-name
+                (concat name ".el")
+                minimal-emacs-user-directory)))
+    (when (file-exists-p file)
+      (load-file file))))

@@ -1,8 +1,14 @@
+(defvar my-full-name "Cullum Smith"
+  "User's full name.")
+
+(defvar my-email "cullum@sacredheartsc.com"
+  "User's email address.")
+
 ;; Emacs is not actually a package. But we put all the "generic" configs in here.
 (use-package emacs
   :init
-  (setq user-full-name "Cullum Smith"
-        user-mail-address "cullum@sacredheartsc.com")
+  (setq user-full-name my-full-name
+        user-mail-address my-email)
 
   ;; tab = 2 spaces.
   (setq-default tab-width 2)
@@ -119,9 +125,9 @@
   (add-hook 'kill-emacs-hook #'recentf-cleanup -90))
 
 ;; Enable automatic insertion and management of matching pairs of characters
-(use-package elec-pair
-  :ensure nil
-  :commands (electric-pair-mode
-             electric-pair-local-mode
-             electric-pair-delete-pair)
-  :hook (after-init . electric-pair-mode))
+;; (use-package elec-pair
+;;   :ensure nil
+;;   :commands (electric-pair-mode
+;;              electric-pair-local-mode
+;;              electric-pair-delete-pair)
+;;   :hook (after-init . electric-pair-mode))
