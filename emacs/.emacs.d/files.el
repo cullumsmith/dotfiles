@@ -37,21 +37,16 @@
              treemacs-bookmark
              treemacs-find-file
              treemacs-find-tag)
-
   :bind
   (:map global-map
-        ("M-0" . treemacs-select-window)
-        ("C-c t" . treemacs-prefix-map))
-  (:map treemacs-prefix-map
-        ("1"   . treemacs-delete-other-windows)
-        ("t"   . treemacs)
-        ("d"   . treemacs-select-directory)
-        ("B"   . treemacs-bookmark)
-        ("C-t" . treemacs-find-file)
-        ("M-t" . treemacs-find-tag))
+        ("M-0"       . treemacs-select-window)
+        ("C-x t 3"   . treemacs-delete-other-windows)
+        ("C-x t T"   . treemacs)
+        ("C-x t D"   . treemacs-select-directory)
+        ("C-x t B"   . treemacs-bookmark)
+        ("C-x t C-t" . treemacs-find-file)
+        ("C-x t M-t" . treemacs-find-tag))
   :init
-  (define-prefix-command 'treemacs-prefix-map)
-
   (with-eval-after-load 'winum
     (define-key winum-keymap (kbd "M-0") #'treemacs-select-window))
   :config
@@ -99,7 +94,7 @@
         treemacs-select-when-already-in-treemacs 'move-back
         treemacs-space-between-root-nodes        t
         treemacs-tag-follow-cleanup              t
-        treemacs-tag-follow-delay                0.5
+        treemacs-tag-follow-delay                0.2
         treemacs-text-scale                      nil
         treemacs-user-mode-line-format           nil
         treemacs-user-header-line-format         nil
@@ -154,9 +149,3 @@
 (use-package treemacs-magit
   :after (treemacs magit)
   :ensure t)
-
-;; Per-tab treemacs
-(use-package treemacs-tab-bar
-  :after (treemacs)
-  :ensure t
-  :config (treemacs-set-scope-type 'Tabs))

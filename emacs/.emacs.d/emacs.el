@@ -54,7 +54,7 @@
   (setq tab-bar-show 1
         tab-bar-new-tab-choice "*scratch*"
         tab-bar-tab-hints t
-        tab-bar-select-tab-modifiers '(control)))
+        tab-bar-select-tab-modifiers '(meta control)))
 
 ;; Move directionally between windows
 (use-package windmove

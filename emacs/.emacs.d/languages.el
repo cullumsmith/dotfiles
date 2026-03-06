@@ -20,7 +20,6 @@
   (treesit-auto-add-to-auto-mode-alist 'all)
   (global-treesit-auto-mode))
 
-
 (use-package eldoc
   :ensure nil
   :delight)
@@ -33,13 +32,13 @@
   (emacs-lisp-mode . highlight-defined-mode))
 
 ;; Prevent parenthesis imbalance
-(use-package paredit
+(use-package smartparens
   :ensure t
-  :commands paredit-mode
-  :hook
-  (emacs-lisp-mode . paredit-mode)
-  :config
-  (define-key paredit-mode-map (kbd "RET") nil))
+  :delight
+  :hook (prog-mode text-mode markdown-mode)
+  :init
+  (require 'smartparens-config)
+  (smartparens-global-strict-mode 1))
 
 ;; Provides functions to find references to functions, macros, variables,
 ;; special forms, and symbols in Emacs Lisp
@@ -76,3 +75,12 @@
   :commands nginx-mode
   :mode (("nginx\\.conf\\'" . nginx-mode)
          ("/nginx/.+\\.conf\\'" . nginx-mode)))
+
+(use-package markdown-mode
+  :commands (gfm-mode
+             gfm-view-mode
+             markdown-mode
+             markdown-view-mode)
+  :mode (("\\.markdown\\'" . markdown-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("README\\.md\\'" . gfm-mode)))
