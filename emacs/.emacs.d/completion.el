@@ -16,7 +16,7 @@
   (global-corfu-mode)
   (corfu-popupinfo-mode)
   (setq corfu-auto t
-        corfu-auto-delay 0.2
+        corfu-auto-delay 0.5
         corfu-popupinfo-delay '(1.0 . 0.5)
         corfu-auto-trigger "." ;; Custom trigger characters
         corfu-quit-no-match 'separator))

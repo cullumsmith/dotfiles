@@ -1,3 +1,27 @@
+(use-package dired
+  :ensure nil
+  :commands (dired)
+  :config
+  ;; Constrain vertical cursor movement to lines within the buffer
+  (setq dired-movement-style 'bounded-files)
+  (setq dired-omit-verbose nil)
+  (add-hook 'dired-mode-hook #'dired-hide-details-mode)
+  (define-key dired-mode-map [mouse-2] 'dired-mouse-find-file)
+  ;; Hide files from dired
+  (setq dired-omit-files (concat "\\`[.]\\'"
+                                 "\\|\\(?:\\.js\\)?\\.meta\\'"
+                                 "\\|\\.\\(?:elc|a\\|o\\|pyc\\|pyo\\|swp\\|class\\)\\'"
+                                 "\\|^\\.DS_Store\\'"
+                                 "\\|^\\.\\(?:svn\\|git\\)\\'"
+                                 "\\|^\\.ccls-cache\\'"
+                                 "\\|^\\.nfs.*\\'"
+                                 "\\|^__pycache__\\'"
+                                 "\\|^\\.project\\(?:ile\\)?\\'"
+                                 "\\|^flycheck_.*"
+                                 "\\|^flymake_.*"))
+  (add-hook 'dired-mode-hook #'dired-omit-mode)
+  (setq dired-listing-switches "--group-directories-first -ahlvF"))
+
 ;; Construct unique names for buffers with the same filename.
 (use-package uniquify
   :ensure nil
