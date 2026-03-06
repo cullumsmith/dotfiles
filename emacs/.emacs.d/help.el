@@ -22,8 +22,7 @@
 
 ;; Display available commands after typing a key prefix.
 (use-package which-key
-  :when (string> emacs-version "30")
-  :ensure nil
+  :ensure (if (< emacs-major-version 30) t nil)
   :delight
   :commands which-key-mode
   :hook (after-init . which-key-mode)
