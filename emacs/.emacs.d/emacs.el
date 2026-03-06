@@ -15,7 +15,6 @@
   (setq-default indent-tabs-mode nil)
 
   ;; Enable `auto-save-mode' to prevent data loss.
-  ;; Enable
   (setq auto-save-default t)
   (setq auto-save-interval 300)
   (setq auto-save-timeout 30)
@@ -37,9 +36,6 @@
   (show-paren-mode 1) ;; highlight matching parens
   (global-hl-line-mode 1) ;; highlight the current line
   (delete-selection-mode 1) ;; typed text replaces the selection
-
-  ;; Allow Emacs to upgrade built-in packages
-  (setq package-install-upgrade-built-in t)
 
   ;; Display the current line and column numbers in the mode line
   (setq line-number-mode t)
