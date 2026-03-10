@@ -35,7 +35,6 @@
 (use-package smartparens
   :ensure t
   ;; The version in melpa-stable is ANCIENT.
-  :pin melpa
   :hook (prog-mode text-mode markdown-mode)
   :config
   (require 'smartparens-config)
