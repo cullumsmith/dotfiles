@@ -33,4 +33,8 @@
 (use-package aggressive-indent
   :ensure t
   :delight
-  :hook (prog-mode . aggressive-indent-mode))
+  :commands (global-aggressive-indent-mode aggressive-indent-mode)
+  :init
+  (global-aggressive-indent-mode 1)
+  (add-to-list 'aggressive-indent-excluded-modes 'python-ts-mode)
+  (add-to-list 'aggressive-indent-excluded-modes 'yaml-ts-mode))
