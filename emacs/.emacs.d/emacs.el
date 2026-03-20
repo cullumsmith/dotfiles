@@ -37,6 +37,9 @@
   (global-hl-line-mode 1) ;; highlight the current line
   (delete-selection-mode 1) ;; typed text replaces the selection
 
+  ;; Go to first/last result with M-<, M->
+  (setq isearch-allow-motion 1)
+
   ;; Display the current line and column numbers in the mode line
   (setq line-number-mode t)
   (setq column-number-mode t)
@@ -50,13 +53,16 @@
 ;; Native tab bar
 (use-package tab-bar
   :ensure nil
-  :commands (tab-bar-mode)
+  :commands (tab-bar-mode tab-bar-history-mode)
   :init
   (tab-bar-mode 1)
+  (tab-bar-history-mode 1)
   (setq tab-bar-show 1
         tab-bar-new-tab-choice "*scratch*"
         tab-bar-tab-hints t
-        tab-bar-select-tab-modifiers '(meta control)))
+        tab-bar-select-tab-modifiers '(meta control))
+  :bind (("C-c <left>" . tab-bar-history-back)
+         ("C-c <right>" . tab-bar-history-forward)))
 
 ;; Move directionally between windows
 (use-package windmove

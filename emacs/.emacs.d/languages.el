@@ -59,33 +59,27 @@
         ("C-M-k" . sp-kill-sexp)
         ("C-M-w" . sp-copy-sexp)
 
-        ("M-<delete>" . sp-unwrap-sexp)
-        ("M-<backspace>" . sp-backward-unwrap-sexp)
+        ("M-(" . sp-unwrap-sexp)
+        ("M-)"   . sp-wrap-round)
+        ("M-]"   . sp-wrap-square)
 
-        ("C-<right>" . sp-forward-slurp-sexp)
-        ("C-<left>" . sp-forward-barf-sexp)
-        ("C-M-<left>" . sp-backward-slurp-sexp)
-        ("C-M-<right>" . sp-backward-barf-sexp)
+        ("C-)" . sp-forward-slurp-sexp)
+        ("C-(" . sp-forward-barf-sexp)
+        ("C-M-)" . sp-backward-slurp-sexp)
+        ("C-M-(" . sp-backward-barf-sexp)
 
         ("M-D" . sp-splice-sexp)
         ("C-M-<delete>" . sp-splice-sexp-killing-forward)
         ("C-M-<backspace>" . sp-splice-sexp-killing-backward)
         ("C-S-<backspace>" . sp-splice-sexp-killing-around)
 
-        ("C-]" . sp-select-next-thing-exchange)
-        ("C-<left_bracket>" . sp-select-previous-thing)
-        ("C-M-]" . sp-select-next-thing)
-
         ("M-F" . sp-forward-symbol)
         ("M-B" . sp-backward-symbol)
 
         ("C-\"" . sp-change-inner)
-        ("M-i"  . sp-change-enclosing)
+        ("C-M-\"" . sp-change-inner)
 
-        ("C-M-;" . sp-comment-sexp)
-        ("M-("   . sp-wrap-round)
-        ("M-["   . sp-wrap-square)
-        ("M-{"   . sp-wrap-curly))
+        ("C-M-;" . sp-comment-sexp))
   (:map emacs-lisp-mode-map
         (";".  sp-comment)))
 
