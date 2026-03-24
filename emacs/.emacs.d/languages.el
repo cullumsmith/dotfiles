@@ -34,11 +34,11 @@
 ;; Prevent parenthesis imbalance
 (use-package smartparens
   :ensure t
-  ;; The version in melpa-stable is ANCIENT.
-  :hook (prog-mode text-mode markdown-mode)
+  :hook
+  ((prog-mode text-mode markdown-mode) . smartparens-mode)
+  ((emacs-lisp-mode python-mode python-ts-mode) . turn-on-smartparens-strict-mode)
   :config
   (require 'smartparens-config)
-  (smartparens-global-strict-mode 1)
   :bind
   (:map smartparens-mode-map
         ("C-M-f" . sp-forward-sexp)

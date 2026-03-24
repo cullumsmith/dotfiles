@@ -13,6 +13,7 @@
   ;; tab = 2 spaces.
   (setq-default tab-width 2)
   (setq-default indent-tabs-mode nil)
+  (setq-default fill-column 88)
 
   ;; Enable `auto-save-mode' to prevent data loss.
   (setq auto-save-default t)
