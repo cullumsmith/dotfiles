@@ -1,18 +1,19 @@
-HOME_PACKAGES = readline sh vi vim minimal-emacs.d emacs
-XDG_PACKAGES  = tmux git
-STOW_ARGS  = --verbose --no-folding
+HOME_PACKAGES    = readline sh vi vim minimal-emacs.d emacs
+XDG_PACKAGES     = tmux git xdg
+STOW_ARGS        = --verbose --no-folding
+XDG_CONFIG_HOME ?= ${HOME}/.config
 
 .PHONY: dry-run
 dry-run:
-	stow --no --restow ${STOW_ARGS} --target ${HOME}            ${HOME_PACKAGES}
+	stow --no --restow ${STOW_ARGS} --target ${HOME} ${HOME_PACKAGES}
 	stow --no --restow ${STOW_ARGS} --target ${XDG_CONFIG_HOME} ${XDG_PACKAGES}
 
 .PHONY: install
 install:
-	stow --restow ${STOW_ARGS} --target ${HOME}            ${HOME_PACKAGES}
+	stow --restow ${STOW_ARGS} --target ${HOME} ${HOME_PACKAGES}
 	stow --restow ${STOW_ARGS} --target ${XDG_CONFIG_HOME} ${XDG_PACKAGES}
 
 .PHONY: uninstall
 uninstall:
-	stow --delete ${STOW_ARGS} --target ${HOME}            ${HOME_PACKAGES}
+	stow --delete ${STOW_ARGS} --target ${HOME} ${HOME_PACKAGES}
 	stow --delete ${STOW_ARGS} --target ${XDG_CONFIG_HOME} ${XDG_PACKAGES}
