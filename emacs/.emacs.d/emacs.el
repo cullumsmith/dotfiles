@@ -9,6 +9,7 @@
   :init
   (setq user-full-name my-full-name
         user-mail-address my-email)
+  (setq package-install-upgrade-built-in t)
 
   ;; tab = 2 spaces.
   (setq-default tab-width 2)
