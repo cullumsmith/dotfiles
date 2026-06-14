@@ -3,6 +3,7 @@
 
 (set-frame-font my-font nil t)
 (set-face-attribute 'fixed-pitch nil :family 'unspecified)
+(add-to-list 'default-frame-alist `(font . ,my-font))
 
 (use-package zenburn-theme
   :ensure t
